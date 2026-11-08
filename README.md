@@ -97,7 +97,7 @@ npm run dev
 
 ## RAG / LLM Approach & Decisions
 
-*   **LLM Choice:** **Groq (`openai/gpt-oss-20b`)** is the primary LLM for analysis and chat due to its sub-second latency and strict JSON mode support. **Gemini 2.5 Flash** is used as a fallback.
+*   **LLM Choice:** **Groq (`openai/gpt-oss-20b`)** is the primary LLM for analysis and chat due to its sub-second latency and strict JSON mode support. **Gemini 3.6 Flash** is used as a fallback.
 *   **Embedding Model:** **Gemini `gemini-embedding-001`**. It provides 768-dimensional vectors, balancing quality and storage efficiency.
 *   **Vector Database:** **Neon (PostgreSQL) + pgvector**. Chosen over dedicated vector DBs (like Pinecone) to keep the architecture simple, leveraging a single database for both relational data and vector data.
 *   **Chunking Strategy:** Simple character-based chunking (500 characters with 50 overlap). Resumes are also stored with their first 3000 characters as an "Overall Summary" for holistic context.
