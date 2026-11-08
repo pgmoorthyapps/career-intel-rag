@@ -5,6 +5,24 @@
 
 An AI-powered full-stack application that bridges the gap between job seekers and employers by analyzing resumes against job descriptions.
 
+---
+
+## Live Demo & Deployment
+
+| Service | Live URL | Description |
+| :--- | :--- | :--- |
+| **Web Application** | [career-intel-rag-1.onrender.com](https://career-intel-rag-1.onrender.com/) | Production React Frontend |
+| **API Documentation** | [career-intel-rag.onrender.com/docs](https://career-intel-rag.onrender.com/docs) | Interactive Swagger / OpenAPI Docs |
+| **Walkthrough Video** | *Coming soon / In progress* | 3-minute architecture & demo tour |
+
+### Demo Credentials
+* **Job Seeker Portal:** `jcmoorthy1411@gmail.com` \| `123456`
+* **Employer Portal:** `jcmoorthy5050@gmail.com` \| `123456`
+
+> **Note on Free Tier:** As both services run on Render's free tier, the backend may take 30–50 seconds to spin up on the initial request after a period of inactivity.
+
+---
+
 ## Overview
 The job market is highly competitive, and candidates often struggle to understand why they are rejected or what specific skills they lack for a particular role. Conversely, recruiters spend countless hours manually screening resumes.
 
