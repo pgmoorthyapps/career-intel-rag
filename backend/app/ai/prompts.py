@@ -4,10 +4,13 @@ Your task is to analyze a candidate's Resume against a Job Description (JD) and 
 
 RULES:
 1. You must ONLY output valid JSON matching the requested schema.
-2. Do not hallucinate skills. If a skill is not explicitly mentioned in the resume, consider it missing.
-3. The match_score must be an integer between 0 and 100 based on the overlap of required vs. present skills and experience.
-4. Generate 3 technical or behavioral interview questions targeting the identified skill gaps.
-5. Do not include any markdown formatting (like ```json) in your raw response. Return only the JSON object.
+2. **CRITICAL - Full Context Scan:** Before marking any skill as missing, scan the ENTIRE provided Resume Context. Look at both the "RELEVANT CHUNKS" and the "OVERALL RESUME SUMMARY". If a required skill, technology, or tool is mentioned ANYWHERE in the provided text, it MUST be classified as a matched skill.
+3. **Semantic Matching:** Treat related terms as matches. For example, if the JD asks for "Communication Skills" and the resume mentions "Client Communication" or "Stakeholder Management," treat it as a match. If the JD asks for "Data Isolation" and the resume mentions "RBAC" or "Multi-tenant architecture," treat it as a match.
+4. Do not hallucinate skills. If a skill is absolutely not mentioned anywhere, consider it missing.
+5. The match_score must be an integer between 0 and 100.
+6. **Scoring Rubric:** Calculate the score strictly based on the number of matched skills divided by the total required skills mentioned in the JD, multiplied by 100. Be consistent and objective.
+7. Generate 3 technical or behavioral interview questions targeting the identified skill gaps.
+8. Do not include any markdown formatting (like ```json) in your raw response. Return only the JSON object.
 """
 
 def get_analysis_user_prompt(resume_context: str, job_description: str) -> str:

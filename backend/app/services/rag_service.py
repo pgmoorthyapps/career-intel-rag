@@ -66,7 +66,7 @@ class RAGService:
         await db.commit()
 
     @staticmethod
-    async def get_relevant_resume_chunks(db: AsyncSession, resume_id: int, job_text: str, limit: int = 3) -> str:
+    async def get_relevant_resume_chunks(db: AsyncSession, resume_id: int, job_text: str, limit: int = 5) -> str:
         job_embedding = await EmbeddingClient.get_embedding(job_text)
         job_emb_str = str(job_embedding[:768])
         
