@@ -57,7 +57,7 @@ class LLMClient:
 
     @staticmethod
     async def _call_gemini_analysis(resume_text: str, job_description: str) -> MatchAnalysisResponse:
-         url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={settings.GEMINI_API_KEY}"
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={settings.GEMINI_API_KEY}"
         
         schema_str = json.dumps(MatchAnalysisResponse.model_json_schema())
         prompt = f"{SYSTEM_PROMPT_ANALYSIS}\nOutput Schema: {schema_str}\n\n{get_analysis_user_prompt(resume_text, job_description)}"

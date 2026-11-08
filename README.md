@@ -144,7 +144,7 @@ AI chat responses are rendered using `react-markdown` with `remark-gfm` to suppo
 ---
 
 ## How I used AI Tools
-I used **Cursor / ChatGPT** extensively as a coding pair-programmer.
+I used **DeepSeek** extensively as a coding pair-programmer.
 *   **Do's:** Used AI to generate boilerplate code (CRUD, Pydantic schemas), debug complex issues (like the `asyncpg` vector bug), and design UI components.
 *   **Don'ts:** I did not trust AI for architectural decisions (like choosing the DB schema or security flows). I manually verified all code, especially around data isolation and JWT handling. I also wrote the prompts and README based on my own understanding.
 
